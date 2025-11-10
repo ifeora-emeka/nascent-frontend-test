@@ -9,6 +9,12 @@ const ethOrderbook = require('./data/eth_orderbook.json');
 
 app.use(express.json());
 
+const cors = require('cors');
+const allowedOrigins = process.env.ALLOWED_ORIGINS ? process.env.ALLOWED_ORIGINS.split(',') : ['http://localhost:3000'];
+app.use(cors({
+  origin: allowedOrigins
+}));
+
 /* Endpoint for simple hello world test */
 app.get('/', (req, res) => {
   res.send('Hello World!')
