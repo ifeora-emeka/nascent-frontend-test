@@ -2,7 +2,7 @@ const express = require('express')
 const { v4: uuidv4 } = require('uuid');
 
 const app = express()
-const port = process.env.PORT || 8080
+const port = process.env.PORT || 3001
 
 const btcOrderbook = require('./data/btc_orderbook.json');
 const ethOrderbook = require('./data/eth_orderbook.json');
