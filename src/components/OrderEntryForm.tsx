@@ -53,7 +53,8 @@ export default function OrderEntryForm({ asset, midPrice, bestBid, bestAsk, onSu
     })
 
     useEffect(() => {
-        if (!form.getValues('price')) {
+        const currentPrice = form.getValues('price')
+        if (!currentPrice || currentPrice === '0.00') {
             form.setValue('price', midPrice.toFixed(2))
         }
     }, [midPrice, form])
